@@ -1,0 +1,29 @@
+---
+
+- name: 'Checking prerequisites'
+  become: yes
+  package:
+    state: present
+    name:
+      - curl
+      - tar
+
+- name: 'Make sure directory exists: "{{ google_fonts_install_dir }}"'
+  file:
+    path: '{{ item }}'
+    state: directory
+  with_items:
+    - '{{ google_fonts_install_dir }}'
+
+- name: 'Make sure all directories for the fonts exists'
+  file:
+    path: '{{ google_fonts_install_dir }}/{{ item }}'
+    state: directory
+  loop: '{{ google_fonts_list }}'
+
+- name: 'Extract fonts from archives to target install directory'
+  unarchive:
+    src: '{{ google_fonts_helper_endpoint }}/{{ item }}?download=zip&formats={{ google_fonts_download_formats | join(",") }}'
+    dest: '{{ google_fonts_install_dir }}/{{ item }}'
+    remote_src: yes
+  loop: '{{ google_fonts_list }}'
