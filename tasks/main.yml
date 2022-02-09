@@ -27,3 +27,4 @@
     dest: '{{ google_fonts_install_dir }}/{{ item }}'
     remote_src: yes
   loop: '{{ google_fonts_list }}'
+  ignore_errors: "{{ ansible_check_mode }}"
