@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> This repo contains Ansible role that installs fonts from the [Google Fonts library](https://fonts.google.com/) to the target host system using <a href="https://google-webfonts-helper.herokuapp.com/">Google Webfonts Helper</a> service.
+> This repo contains Ansible role that installs fonts from the [Google Fonts library](https://fonts.google.com/) to the target host system using <a href="https://gwfh.mranftl.com/">Google Webfonts Helper</a> service.
 
 ## Requirements
 
@@ -49,13 +49,13 @@ Following system packages are required and will be installed if needed:
   The following command will print all available font ids to a terminal.
 
   ```bash
-  curl https://google-webfonts-helper.herokuapp.com/api/fonts/ | jq ".[].id" | sort
+  curl https://gwfh.mranftl.com/api/fonts/ | jq -r ".[].id" | sort
   ```
   > ⚠️ Note: command relies on `jq` and `curl` packages that needs to be installed first.
 
 - :feelsgood: **Option 2**:
 
-  Find in raw JSON fonts list: https://google-webfonts-helper.herokuapp.com/api/fonts
+  Find in raw JSON fonts list: https://gwfh.mranftl.com/api/fonts
 
 ## Author
 
@@ -76,7 +76,7 @@ Give a ⭐️ if this project helped you!
 
 ## Special thanks
 
-**[Mario Ranftl](https://github.com/majodev)** and all [project](https://github.com/majodev/google-webfonts-helper) [contributors](https://github.com/majodev/google-webfonts-helper/graphs/contributors) of the awesome [Google Webfonts Helper](https://google-webfonts-helper.herokuapp.com/)!
+**[Mario Ranftl](https://github.com/majodev)** and all [project](https://github.com/majodev/google-webfonts-helper) [contributors](https://github.com/majodev/google-webfonts-helper/graphs/contributors) of the awesome [Google Webfonts Helper](https://gwfh.mranftl.com/)!
 
 <img src="https://badges.pufler.dev/contributors/majodev/google-webfonts-helper?bots=false&size=42" />
 

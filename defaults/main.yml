@@ -5,12 +5,12 @@ google_fonts_install_dir: '{{ ansible_env.HOME }}/.fonts/'
 # List of font IDs that needs to be installed.
 # Note: font IDs can be retrieved by running:
 # ```
-# curl https://google-webfonts-helper.herokuapp.com/api/fonts/ | jq ".[].id" | sort
+# curl https://gwfh.mranftl.com/api/fonts/ | jq -r ".[].id" | sort
 # ```
 google_fonts_list: []
 
 # Endpoint that returns list of all available fonts and lets to download them.
-google_fonts_helper_endpoint: https://google-webfonts-helper.herokuapp.com/api/fonts
+google_fonts_helper_endpoint: https://gwfh.mranftl.com/api/fonts
 
 # List of font formats in which fonts will be downloaded in. Just TTF by default. 
 google_fonts_download_formats: 
